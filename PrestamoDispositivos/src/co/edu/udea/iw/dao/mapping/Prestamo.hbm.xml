@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 7/05/2016 11:13:42 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="co.edu.udea.iw.dto.Prestamo" table="PRESTAMO">
+        <id name="idPrestamo" type="java.lang.Integer">
+            <column name="IDPRESTAMO" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="usuarioEntrega" class="co.edu.udea.iw.dto.Usuario" fetch="join">
+            <column name="USUARIOENTREGA" />
+        </many-to-one>
+        <property name="horaInicio" type="java.util.Date">
+            <column name="HORAINICIO" />
+        </property>
+        <property name="horaFin" type="java.util.Date">
+            <column name="HORAFIN" />
+        </property>
+        <many-to-one name="solicitud" class="co.edu.udea.iw.dto.Solicitud" fetch="join">
+            <column name="SOLICITUD" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
