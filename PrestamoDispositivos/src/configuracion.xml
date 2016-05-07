@@ -56,7 +56,7 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 
-	<bean id="clienteService" class="co.edu.udea.iw.service.ClienteService">
+	<bean id="clienteService" class="co.edu.udea.iw.service.PersonaService">
 		<property name="clienteDAO" ref="clienteDao"></property>
 		<property name="usuarioDAO" ref="usuarioDao"></property>
 	</bean>

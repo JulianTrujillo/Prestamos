@@ -22,32 +22,29 @@ public class UsuarioService {
 		this.usuarioDAO = usuarioDAO;
 	}
 	
-	
-	public Boolean validar(String login, String clave) throws IWDaoException, IWServiceException{
+	public Boolean validar(String login, String contrasena) throws IWDaoException, IWServiceException{
 		
 		Cifrar cifrar = new Cifrar();
 		
 		if(Validaciones.isTextoVacio(login)){
-			throw new IWServiceException("El login del usuario no puede ser nula, ni una cadena de caracteres vacia");
+			throw new IWServiceException("El login del usuario no puede ser nulo, ni una cadena de caracteres vacia");
 		}
 		
-		if(Validaciones.isTextoVacio(clave)){
-			throw new IWServiceException("La clave del usuario no puede ser nula, ni una cadena de caracteres vacia");
+		if(Validaciones.isTextoVacio(contrasena)){
+			throw new IWServiceException("La contraseña del usuario no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		
-		Usuario usuario = usuarioDAO.obtener(login);
+		Usuario usuario = usuarioDAO.obtenerLogin(login);
 		if(usuario == null){
 			throw new IWServiceException("Usuario o contraseña no válidos");
 		}
-		
-		
-		if(!cifrar.encrypt(clave).equals(usuario.getPassword())){
+				
+		if(!cifrar.encrypt(contrasena).equals(usuario.getContrasena())){
 			throw new IWServiceException("Usuario o contraseña no válidos");
 		}
 		
 		return Boolean.TRUE;
-		
-		
+
 	}
 
 }
