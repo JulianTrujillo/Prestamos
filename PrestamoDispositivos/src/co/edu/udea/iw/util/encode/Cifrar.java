@@ -13,7 +13,7 @@ import java.security.NoSuchAlgorithmException;
 public class Cifrar {
 	
 	public static final String CHARSET = "UTF8";
-	public static final String ENC_ALGORITM_NAME = "MD5";
+	public static final String ENC_ALGORITM_NAME = "SHA-256";
 	
 	/**
 	 * Recibe un mensaje y lo retorna ya encriptado
