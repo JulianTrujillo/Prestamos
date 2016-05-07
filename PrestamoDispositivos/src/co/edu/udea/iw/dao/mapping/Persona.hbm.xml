@@ -3,46 +3,46 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 7/05/2016 11:12:19 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="co.edu.udea.iw.dto.Persona" table="PERSONA">
-        <id name="apellidos" type="java.lang.String">
-            <column name="APELLIDOS" />
-            <generator class="assigned" />
-        </id>
-        <property name="cedula" type="java.lang.String">
-            <column name="CEDULA" />
-        </property>
-        <property name="nombres" type="java.lang.String">
-            <column name="NOMBRES" />
-        </property>
-        <property name="correo" type="java.lang.String">
-            <column name="CORREO" />
-        </property>
-        <property name="telefono" type="java.lang.String">
-            <column name="TELEFONO" />
-        </property>
-        <many-to-one name="usuario" class="co.edu.udea.iw.dto.Usuario" fetch="join">
-            <column name="USUARIO" />
-        </many-to-one>
-        <many-to-one name="usuarioCrea" class="co.edu.udea.iw.dto.Usuario" fetch="join">
-            <column name="USUARIOCREA" />
-        </many-to-one>
-        <many-to-one name="usuarioModifica" class="co.edu.udea.iw.dto.Usuario" fetch="join">
-            <column name="USUARIOMODIFICA" />
-        </many-to-one>
-        <many-to-one name="usuarioElimina" class="co.edu.udea.iw.dto.Usuario" fetch="join">
-            <column name="USUARIOELIMINA" />
-        </many-to-one>
-        <property name="fechaCreacion" type="java.util.Date">
-            <column name="FECHACREACION" />
-        </property>
-        <property name="fechaModificacion" type="java.util.Date">
-            <column name="FECHAMODIFICACION" />
-        </property>
-        <property name="fechaEliminacion" type="java.util.Date">
-            <column name="FECHAELIMINACION" />
-        </property>
-        <property name="eliminado" type="java.lang.Boolean">
-            <column name="ELIMINADO" />
-        </property>
-    </class>
+	<class name="co.edu.udea.iw.dto.Persona" table="Persona">
+		<id name="cedula" type="java.lang.String">
+			<column name="Cedula" precision="15" />
+			<generator class="assigned" />
+		</id>
+		<property name="nombres" type="java.lang.String">
+			<column name="Nombres" length="30" not-null="true"/>
+		</property>
+		<property name="apellidos" type="java.lang.String">
+			<column name="Apellidos" length="30" not-null="true"/>
+		</property>
+		<property name="correo" type="java.lang.String">
+			<column name="Email" length="50" not-null="true"/>
+		</property>
+		<property name="telefono" type="java.lang.String">
+			<column name="Telefono" length="20" not-null="true"/>
+		</property>
+		<one-to-one name="usuario" class="co.edu.udea.iw.dto.Usuario" fetch="join">
+			<column name="Usuario" length="25" not-null="true"/>
+		</one-to-one>
+		<many-to-one name="usuarioCrea" class="co.edu.udea.iw.dto.Usuario" fetch="join">
+			<column name="UsuarioCrea" length="25" not-null="true"/>
+		</many-to-one>
+		<many-to-one name="usuarioModifica" class="co.edu.udea.iw.dto.Usuario" fetch="join">
+			<column name="UsuarioModifica" length="25" not-null="false"/>
+		</many-to-one>
+		<many-to-one name="usuarioElimina" class="co.edu.udea.iw.dto.Usuario" fetch="join">
+			<column name="UsuarioElimina" length="25" not-null="false"/>
+		</many-to-one>
+		<property name="fechaCreacion" type="java.util.Date">
+			<column name="FechaCreacion" not-null="true"/>
+		</property>
+		<property name="fechaModificacion" type="java.util.Date">
+			<column name="FechaModificacion" not-null="false"/>
+		</property>
+		<property name="fechaEliminacion" type="java.util.Date">
+			<column name="FechaEliminacion" not-null="false"/>
+		</property>
+		<property name="eliminado" type="java.lang.Boolean">
+			<column name="Eliminado" length="1"/>
+		</property>
+	</class>
 </hibernate-mapping>

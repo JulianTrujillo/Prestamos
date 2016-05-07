@@ -3,22 +3,22 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 7/05/2016 11:13:08 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="co.edu.udea.iw.dto.Solicitud" table="SOLICITUD">
+    <class name="co.edu.udea.iw.dto.Solicitud" table="Solicitud">
         <id name="idSolicitud" type="java.lang.Integer">
-            <column name="IDSOLICITUD" />
+            <column name="IdSolicitud" precision="12"/>
             <generator class="assigned" />
         </id>
-        <many-to-one name="usuarioSolicita" class="co.edu.udea.iw.dto.Usuario" fetch="join">
-            <column name="USUARIOSOLICITA" />
-        </many-to-one>
+        <one-to-one name="usuarioSolicita" class="co.edu.udea.iw.dto.Usuario" fetch="join">
+            <column name="UsuarioSolicita" length="25" not-null="true"/>
+        </one-to-one>
         <many-to-one name="usuarioAprueba" class="co.edu.udea.iw.dto.Usuario" fetch="join">
-            <column name="USUARIOAPRUEBA" />
+            <column name="UsuarioAprueba" length="25" not-null="true"/>
         </many-to-one>
-        <many-to-one name="dispositivo" class="co.edu.udea.iw.dto.Dispositivo" fetch="join">
-            <column name="DISPOSITIVO" />
-        </many-to-one>
+        <one-to-one name="dispositivo" class="co.edu.udea.iw.dto.Dispositivo" fetch="join">
+            <column name="Dispositivo" length="12" not-null="true"/>
+        </one-to-one>
         <property name="estadoSolicitud" type="java.lang.String">
-            <column name="ESTADOSOLICITUD" />
+            <column name="EstadoSolicitud" length="25" not-null="true" default="Espera"/>
         </property>
     </class>
 </hibernate-mapping>
