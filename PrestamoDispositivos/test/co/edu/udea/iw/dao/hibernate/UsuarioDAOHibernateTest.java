@@ -1,4 +1,4 @@
-package co.edu.udea.iw.dao.hibernate.test;
+package co.edu.udea.iw.dao.hibernate;
 
 import static org.junit.Assert.*;
 
@@ -16,12 +16,10 @@ import co.edu.udea.iw.dao.UsuarioDAO;
 import co.edu.udea.iw.dto.Usuario;
 import co.edu.udea.iw.exception.IWDaoException;
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
 @ContextConfiguration(locations = "classpath:configuracion.xml")
-public class UsuarioDAOHIbernateTest {
-
+public class UsuarioDAOHibernateTest {
 
 	@Autowired
 	UsuarioDAO usuarioDao;
@@ -32,10 +30,10 @@ public class UsuarioDAOHIbernateTest {
 		List<Usuario> usuarios = null;
 		
 		try{
-			usuarios = UsuarioDAO.obtener();
+			usuarios = usuarioDao.obtener();
 			
 			for(Usuario usuario : usuarios){
-				System.out.println("Nombre Usuario: " + usuario.getLogin());
+				System.out.println("Login: " + usuario.getLogin());
 			}
 			
 			assertTrue(true);
@@ -43,6 +41,5 @@ public class UsuarioDAOHIbernateTest {
 			fail(e.getMessage());
 		}
 	}
-
 
 }
