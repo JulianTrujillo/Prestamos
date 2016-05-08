@@ -20,9 +20,7 @@
 		<property name="telefono" type="java.lang.String">
 			<column name="Telefono" length="20" not-null="true"/>
 		</property>
-		<one-to-one name="usuario" class="co.edu.udea.iw.dto.Usuario" fetch="join">
-			<column name="Usuario" length="25" not-null="true"/>
-		</one-to-one>
+		<one-to-one name="usuario" class="co.edu.udea.iw.dto.Usuario" cascade="save-update"></one-to-one><!-- Falta comprobar si si es así -->
 		<many-to-one name="usuarioCrea" class="co.edu.udea.iw.dto.Usuario" fetch="join">
 			<column name="UsuarioCrea" length="25" not-null="true"/>
 		</many-to-one>

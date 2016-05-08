@@ -44,11 +44,11 @@
 	</bean>
 
 
-	<bean id="ciudadDao" class="co.edu.udea.iw.dao.hibernate.CiudadDAOHibernate">
+	<bean id="personaDao" class="co.edu.udea.iw.dao.hibernate.PersonaDAOHibernate">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 
-	<bean id="clienteDao" class="co.edu.udea.iw.dao.hibernate.ClienteDAOHibernate">
+	<bean id="dispositivoDao" class="co.edu.udea.iw.dao.hibernate.DispositivoDAOHibernate">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 
@@ -57,7 +57,7 @@
 	</bean>
 
 	<bean id="clienteService" class="co.edu.udea.iw.service.PersonaService">
-		<property name="clienteDAO" ref="clienteDao"></property>
+		<property name="personaDAO" ref="personaDao"></property>
 		<property name="usuarioDAO" ref="usuarioDao"></property>
 	</bean>
 

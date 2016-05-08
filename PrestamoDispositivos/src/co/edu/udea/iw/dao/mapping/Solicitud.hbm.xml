@@ -8,15 +8,11 @@
             <column name="IdSolicitud" precision="12"/>
             <generator class="assigned" />
         </id>
-        <one-to-one name="usuarioSolicita" class="co.edu.udea.iw.dto.Usuario" fetch="join">
-            <column name="UsuarioSolicita" length="25" not-null="true"/>
-        </one-to-one>
+        <one-to-one name="usuarioSolicita" class="co.edu.udea.iw.dto.Usuario" cascade="save-update"></one-to-one><!-- comprobar si funciona -->
         <many-to-one name="usuarioAprueba" class="co.edu.udea.iw.dto.Usuario" fetch="join">
             <column name="UsuarioAprueba" length="25" not-null="true"/>
         </many-to-one>
-        <one-to-one name="dispositivo" class="co.edu.udea.iw.dto.Dispositivo" fetch="join">
-            <column name="Dispositivo" length="12" not-null="true"/>
-        </one-to-one>
+        <one-to-one name="dispositivo" class="co.edu.udea.iw.dto.Dispositivo" cascade="save-update"></one-to-one>
         <property name="estadoSolicitud" type="java.lang.String">
             <column name="EstadoSolicitud" length="25" not-null="true" default="Espera"/>
         </property>

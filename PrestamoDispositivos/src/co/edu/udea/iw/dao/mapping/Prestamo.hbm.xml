@@ -17,8 +17,6 @@
         <property name="horaFin" type="java.util.Date">
             <column name="HoraFin" not-null="true"/>
         </property>
-        <one-to-one name="solicitud" class="co.edu.udea.iw.dto.Solicitud" fetch="join">
-            <column name="Solicitud" length="12" not-null="true"/>
-        </one-to-one>
+        <one-to-one name="solicitud" class="co.edu.udea.iw.dto.Solicitud" cascade="save-update"></one-to-one><!-- comprobar si funciona -->
     </class>
 </hibernate-mapping>

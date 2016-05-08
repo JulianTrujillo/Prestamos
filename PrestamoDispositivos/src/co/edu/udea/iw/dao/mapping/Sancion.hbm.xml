@@ -11,9 +11,7 @@
         <property name="tipoSancion" type="java.lang.String">
             <column name="TipoSancion" length="25" not-null="true"/>
         </property>
-        <one-to-one name="prestamo" class="co.edu.udea.iw.dto.Prestamo" fetch="join">
-            <column name="Prestamo" length="12" not-null="true"/>
-        </one-to-one>
+        <one-to-one name="prestamo" class="co.edu.udea.iw.dto.Prestamo" cascade="save-update"></one-to-one><!-- comprobar si funciona -->
         <property name="descripcion" type="java.lang.String">
             <column name="Descripcion" length="120" not-null="true"/>
         </property>
