@@ -31,16 +31,16 @@ public class UsuarioService {
 		}
 		
 		if(Validaciones.isTextoVacio(contrasena)){
-			throw new IWServiceException("La contraseña del usuario no puede ser nula, ni una cadena de caracteres vacia");
+			throw new IWServiceException("La contraseÃ±a del usuario no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		
 		Usuario usuario = usuarioDAO.obtenerLogin(login);
 		if(usuario == null){
-			throw new IWServiceException("Usuario o contraseña no válidos");
+			throw new IWServiceException("Usuario o contraseÃ±a no vÃ¡lidos");
 		}
 				
 		if(!cifrar.encrypt(contrasena).equals(usuario.getContrasena())){
-			throw new IWServiceException("Usuario o contraseña no válidos");
+			throw new IWServiceException("Usuario o contraseÃ±a no vÃ¡lidos");
 		}
 		
 		return Boolean.TRUE;

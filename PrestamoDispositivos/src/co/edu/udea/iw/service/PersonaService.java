@@ -25,7 +25,7 @@ public class PersonaService {
 		Persona persona = null;
 		
 		if(Validaciones.isTextoVacio(cedula)){
-			throw new IWServiceException("La cÈdula de la persona no puede ser nula, ni una cadena de caracteres vacia");
+			throw new IWServiceException("La c√©dula de la persona no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		if(Validaciones.isTextoVacio(nombres)){
 			throw new IWServiceException("Los nombres de la persona no pueden ser nulos, ni una cadena de caracteres vacia");
@@ -34,10 +34,10 @@ public class PersonaService {
 			throw new IWServiceException("Los apellidos de la persona no pueden ser nulos, ni una cadena de caracteres vacia");
 		}
 		if(Validaciones.isTextoVacio(correo)){
-			throw new IWServiceException("El correo electrÛnico de la persona no puede ser nulo, ni una cadena de caracteres vacia");
+			throw new IWServiceException("El correo electr√≥nico de la persona no puede ser nulo, ni una cadena de caracteres vacia");
 		}
 		if(Validaciones.isTextoVacio(telefono)){
-			throw new IWServiceException("El telÈfono de la persona no puede ser nulo, ni una cadena de caracteres vacia");
+			throw new IWServiceException("El tel√©fono de la persona no puede ser nulo, ni una cadena de caracteres vacia");
 		}
 		if(Validaciones.isTextoVacio(usuario)){
 			throw new IWServiceException("El usuario de la persona no puede ser nulo, ni una cadena de caracteres vacia");
@@ -47,7 +47,7 @@ public class PersonaService {
 		}
 		
 		if(!Validaciones.isEmail(correo)){
-			throw new IWServiceException("El correo electrÛnico de la persona debe ser v·lido");
+			throw new IWServiceException("El correo electr√≥nico de la persona debe ser v√°lido");
 		}
 		
 		if(personaDAO.obtenerCedula(cedula) != null){
@@ -86,7 +86,7 @@ public class PersonaService {
 		Persona persona = null;
 		
 		if(Validaciones.isTextoVacio(cedula)){
-			throw new IWServiceException("La cÈdula de la persona no puede ser nula, ni una cadena de caracteres vacia");
+			throw new IWServiceException("La c√©dula de la persona no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		if(Validaciones.isTextoVacio(nombres)){
 			throw new IWServiceException("Los nombres de la persona no pueden ser nulos, ni una cadena de caracteres vacia");
@@ -95,10 +95,10 @@ public class PersonaService {
 			throw new IWServiceException("Los apellidos de la persona no pueden ser nulos, ni una cadena de caracteres vacia");
 		}
 		if(Validaciones.isTextoVacio(correo)){
-			throw new IWServiceException("El correo electrÛnico de la persona no puede ser nulo, ni una cadena de caracteres vacia");
+			throw new IWServiceException("El correo electr√≥nico de la persona no puede ser nulo, ni una cadena de caracteres vacia");
 		}
 		if(Validaciones.isTextoVacio(telefono)){
-			throw new IWServiceException("El telÈfono de la persona no puede ser nulo, ni una cadena de caracteres vacia");
+			throw new IWServiceException("El tel√©fono de la persona no puede ser nulo, ni una cadena de caracteres vacia");
 		}
 		if(Validaciones.isTextoVacio(usuario)){
 			throw new IWServiceException("El usuario de la persona no puede ser nulo, ni una cadena de caracteres vacia");
@@ -108,7 +108,7 @@ public class PersonaService {
 		}
 		
 		if(!Validaciones.isEmail(correo)){
-			throw new IWServiceException("El correo electrÛnico de la persona debe ser v·lido");
+			throw new IWServiceException("El correo electr√≥nico de la persona debe ser v√°lido");
 		}
 		
 		Usuario usuarioP = usuarioDAO.obtenerLogin(usuario);
@@ -144,7 +144,7 @@ public class PersonaService {
 		Persona persona = null;
 		
 		if(Validaciones.isTextoVacio(cedula)){
-			throw new IWServiceException("La cÈdula del persona no puede ser nula, ni una cadena de caracteres vacia");
+			throw new IWServiceException("La c√©dula del persona no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		if(Validaciones.isTextoVacio(usuarioElimina)){
 			throw new IWServiceException("El usuario que elimina a la persona no puede ser nulo, ni una cadena de caracteres vacia");
@@ -176,7 +176,7 @@ public class PersonaService {
 	
 	public Persona obtenerCedula(String cedula) throws IWDaoException, IWServiceException{
 		if(cedula == null && "".equals(cedula)){
-			throw new IWServiceException("La cÈdula de la persona a buscar no puede ser nula, ni una cadena de caracteres vacia");
+			throw new IWServiceException("La c√©dula de la persona a buscar no puede ser nula, ni una cadena de caracteres vacia");
 		}
 		
 		return personaDAO.obtenerCedula(cedula);
