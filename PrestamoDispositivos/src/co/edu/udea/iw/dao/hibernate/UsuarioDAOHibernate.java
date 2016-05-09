@@ -1,7 +1,9 @@
 package co.edu.udea.iw.dao.hibernate;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
@@ -26,8 +28,20 @@ public class UsuarioDAOHibernate extends HibernateDaoSupport implements UsuarioD
 
 	@Override
 	public List<Usuario> obtener() throws IWDaoException {
-		// TODO Auto-generated method stub
-		return null;
+		List<Usuario> usuarios = new ArrayList<Usuario>();
+		Session session = null;
+		
+		try{
+			
+			session = getHibernateTemplate().getSessionFactory().getCurrentSession();
+			Criteria criteria = session.createCriteria(Usuario.class);
+			usuarios = criteria.list();
+			
+		}catch(HibernateException e){
+			throw new IWDaoException(e);
+		}
+		
+		return usuarios;
 	}
 
 	@Override
