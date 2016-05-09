@@ -63,6 +63,10 @@
 	<bean id="sancionDao" class="co.edu.udea.iw.dao.hibernate.SancionDAOHibernate">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	
+	<bean id="solicitudDao" class="co.edu.udea.iw.dao.hibernate.SolicitudDAOHibernate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 
 	<bean id="clienteService" class="co.edu.udea.iw.service.PersonaService">
 		<property name="personaDAO" ref="personaDao"></property>
