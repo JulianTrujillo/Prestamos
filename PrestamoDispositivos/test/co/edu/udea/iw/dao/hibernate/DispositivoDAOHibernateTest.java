@@ -19,19 +19,24 @@ import co.edu.udea.iw.exception.IWDaoException;
 @Transactional
 @ContextConfiguration(locations = "classpath:configuracion.xml")
 public class DispositivoDAOHibernateTest {
+
 	@Autowired
 	DispositivoDAO dispositivoDao;
 
 	@Test
-	private void testObtener() {
-		List<Dispositivo> dispositivos;
-		try {
+	public void testObtener() {
+		
+		List<Dispositivo> dispositivos = null;
+		
+		try{
 			dispositivos = dispositivoDao.obtener();
-			for (Dispositivo dispositivo : dispositivos) {
+			
+			for(Dispositivo dispositivo : dispositivos){
 				System.out.println("Nombre: " + dispositivo.getNombre());
 			}
+			
 			assertTrue(true);
-		} catch (IWDaoException e) {
+		}catch(IWDaoException e){
 			fail(e.getMessage());
 		}
 	}
